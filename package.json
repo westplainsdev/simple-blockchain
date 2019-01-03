@@ -4,5 +4,8 @@
   "private": true,
   "dependencies": {
     "crypto-js": "^3.1.8"
+  },
+  "scripts": {
+    "start": "node index.js"
   }
 }
