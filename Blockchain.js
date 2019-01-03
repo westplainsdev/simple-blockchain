@@ -13,6 +13,10 @@ module.exports = class Blockchain{
         return this.chain[this.chain.length - 1];
     }
 
+    getCurrentChainLength() {
+        return this.chain.length;
+    }
+
     addBlock(newBlock) {
         newBlock.previousHash = this.getLatestBlock().hash;
         newBlock.hash = newBlock.calculateHash();
