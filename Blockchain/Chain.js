@@ -1,6 +1,6 @@
 var Block = require('./Block');
 
-module.exports = class Blockchain {
+module.exports = class Chain {
     constructor() {
         this.chain = [this.createGenesisBlock()];
         this.difficulty = 3; // this value will control how long it will take to mine a block.

@@ -1,4 +1,3 @@
-const Block = require('./Block');
 const Blockchain = require('./Blockchain');
 
 // Write Javascript code!
@@ -21,17 +20,17 @@ function toggleValidity(isChanged) {
 
 
 // create a new blockchain and set the genesis block
-let chain = new Blockchain();
+let chain = new Blockchain.Chain();
 console.log('A new block chain has been created: ' + JSON.stringify(chain.getLatestBlock(), null, 4));
 
 // add data to the blockchain
-chain.addBlock(new Block(1, runnerData.createdDates[0], {
+chain.addBlock(new Blockchain.Block(1, runnerData.createdDates[0], {
     amount: 4
 }));
-chain.addBlock(new Block(2, runnerData.createdDates[1], {
+chain.addBlock(new Blockchain.Block(2, runnerData.createdDates[1], {
     amount: 8
 }));
-chain.addBlock(new Block(3, runnerData.createdDates[2], {
+chain.addBlock(new Blockchain.Block(3, runnerData.createdDates[2], {
     amount: 12
 }));
 
@@ -46,7 +45,6 @@ if (chain.isChainValid()) {
     console.log('The chain is valid');
     console.log('The chain currently has %s elements.', chain.getCurrentChainLength());
     console.log("The chain appears as: " + chain.toString());
-
 } else {
     console.log('The chain is now INVALID');
     console.log('The chain currently has %s elements.', chain.getCurrentChainLength());
