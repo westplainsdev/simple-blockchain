@@ -3,6 +3,7 @@ var Block = require('./Block');
 module.exports = class Blockchain{
     constructor() {
         this.chain = [this.createGenesisBlock()];
+        this.difficulty = 3; // this value will control how long it will take to mine a block.
     }
 
     createGenesisBlock() {
@@ -13,9 +14,13 @@ module.exports = class Blockchain{
         return this.chain[this.chain.length - 1];
     }
 
+    getCurrentChainLength() {
+        return this.chain.length;
+    }
+
     addBlock(newBlock) {
         newBlock.previousHash = this.getLatestBlock().hash;
-        newBlock.hash = newBlock.calculateHash();
+        newBlock.mineBlock(this.difficulty);
         this.chain.push(newBlock);
     }
 

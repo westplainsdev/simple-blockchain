@@ -1,6 +1,11 @@
-# build a simple blockchain with JavaScript
+# simple-blockchain
 
-https://www.codementor.io/savjee/how-to-build-a-blockchain-with-javascript-part-1-k7d373dtk
+This is a simple example of keeping track of changes to an item.
 
+## Instructions
 
-https://www.codementor.io/savjee/implementing-proof-of-work-blockchain-in-javascript-part-2-k9ozymkqw
+To run the application, from the command line run:
+`npm install`
+
+To launch the application, again from the command line:
+`npm start`
