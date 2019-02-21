@@ -1,12 +1,22 @@
 const Blockchain = require('./Blockchain');
 
 // Write Javascript code!
+function setDateTime(hoursForward){
+    var datetimeNow = new Date();
+    datetimeNow.setHours(datetimeNow.getHours() + hoursForward);
+    return datetimeNow;
+}
+
 let runnerData = {
     setValidity: {
         valid: false,
         invalid: true
     },
-    createdDates: [new Date().toLocaleString(), new Date().toLocaleString(), new Date().toLocaleString()]
+    createdDates: [
+        new setDateTime(2).toLocaleString() , 
+        new setDateTime(4).toLocaleString() , 
+        new setDateTime(6).toLocaleString() 
+    ]
 }
 
 function toggleValidity(isChanged) {
@@ -37,7 +47,7 @@ chain.addBlock(new Blockchain.Block(3, runnerData.createdDates[2], {
 // Check if chain is valid (will return true)
 console.log('Is Blockchain valid? ' + chain.isChainValid());
 
-// Let's now manipulate the data (this can be toggled for differnet responses)
+// Let's now manipulate the data (this can be toggled for different responses)
 toggleValidity(runnerData.setValidity.invalid);
 
 // Check our chain again 
